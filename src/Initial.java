@@ -31,6 +31,20 @@ public class Initial {
 		}
 		
 		linkedlist.displayLinkedList();
+		
+		
+		//==== Stack with linkedlist ===//
+		
+		StackLink stacklink = new StackLink();
+		stacklink.push("10");
+		stacklink.push("20");
+		stacklink.push("30");
+		stacklink.push("40");
+		stacklink.displayStack();
+		System.out.println(stacklink.pop());
+		System.out.println(stacklink.pop());
+		stacklink.displayStack();
+
 
 	}
 
