@@ -44,6 +44,21 @@ public class Initial {
 		System.out.println(stacklink.pop());
 		System.out.println(stacklink.pop());
 		stacklink.displayStack();
+		
+		//==== Queue with linkedlist ===//
+		
+		QueueList qlist = new QueueList();
+		qlist.add("51");
+		qlist.add("52");
+		qlist.add("53");
+		qlist.add("54");
+		
+		qlist.displayQueue();
+		
+		System.out.println(qlist.remove());
+		
+		qlist.displayQueue();
+		
 
 
 	}
