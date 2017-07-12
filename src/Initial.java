@@ -59,6 +59,18 @@ public class Initial {
 		
 		qlist.displayQueue();
 		
+		//=== sorted LinkedList ===//
+		
+		SortedList sortedlist = new SortedList();
+		sortedlist.insert("5");
+		sortedlist.insert("7");
+		sortedlist.insert("1");
+		sortedlist.insert("3");
+		sortedlist.displaySortedList();
+		
+		sortedlist.remove();
+		sortedlist.remove();
+		sortedlist.displaySortedList();
 
 
 	}
