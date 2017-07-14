@@ -71,7 +71,64 @@ public class Initial {
 		sortedlist.remove();
 		sortedlist.remove();
 		sortedlist.displaySortedList();
+		
+		//== Doubley Linkedlist ==//
+		
+		DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
+		doublyLinkedList.insertFirst("21");
+		doublyLinkedList.insertFirst("22");
+		doublyLinkedList.insertFirst("23");
+		doublyLinkedList.displayForward();
+		
+		doublyLinkedList.insertLast("31");
+		doublyLinkedList.insertLast("32");
+		doublyLinkedList.insertLast("33");
+		doublyLinkedList.displayForward();
+		
+		DNode deleted = doublyLinkedList.deleteFirst();
+		System.out.println("deleted first"+ deleted.data);
+		DNode deleted2=doublyLinkedList.deleteFirst();
+		System.out.println("deleted first"+ deleted2.data);
+		System.out.println("Display forward");
+		doublyLinkedList.displayForward();
+		System.out.println("Display backward");
+		doublyLinkedList.displayBackward();
 
+		
+		DNode ldeleted = doublyLinkedList.deleteLast();
+		System.out.println("deleted last"+ ldeleted.data);
+		DNode ldeleted2 = doublyLinkedList.deleteLast();
+		System.out.println("deleted last"+ ldeleted2.data);
+		doublyLinkedList.displayForward();
+		
+		doublyLinkedList.insertAfter("41", "21");
+		System.out.println("Display forward after 41");
+		doublyLinkedList.displayForward();
+		System.out.println("Display backwward after 41");
+		doublyLinkedList.displayBackward();
+		
+		doublyLinkedList.insertAfter("42", "31");
+		System.out.println("Display forward");
+		doublyLinkedList.displayForward();
+		
+		doublyLinkedList.insertAfter("43", "42");
+		System.out.println("Display forward");
+		doublyLinkedList.displayForward();
+		
+		DNode deletedkey = doublyLinkedList.deleteKey("42");
+		System.out.println("deleted key"+ deletedkey.data);
+		System.out.println("Display forward");
+		doublyLinkedList.displayForward();
+		DNode deletedkey2=doublyLinkedList.deleteKey("43");
+		System.out.println("deleted key"+ deletedkey2.data);
+		System.out.println("Display forward");
+		doublyLinkedList.displayForward();
+		DNode deletedkey3=doublyLinkedList.deleteKey("21");
+		System.out.println("deleted key"+ deletedkey3.data);
+		System.out.println("Display forward");
+		doublyLinkedList.displayForward();
+		System.out.println("Display backward");
+		doublyLinkedList.displayBackward();
 
 	}
 
