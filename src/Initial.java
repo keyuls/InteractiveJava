@@ -1,3 +1,6 @@
+import com.demo.stack.DelimeterCheck;
+import com.demo.stack.Reverser;
+import com.demo.stack.Stack;
 
 public class Initial {
 
@@ -129,6 +132,47 @@ public class Initial {
 		doublyLinkedList.displayForward();
 		System.out.println("Display backward");
 		doublyLinkedList.displayBackward();
+		
+		//=== Stack ===//
+		
+		Stack stck = new Stack(5);
+		stck.push('a');
+		stck.push('b');
+		stck.push('c');
+		stck.push('d');
+		stck.push('e');
+		
+		if(stck.isFull())
+			System.out.println("stack full");
+		
+		System.out.println(stck.pop());
+		System.out.println(stck.peek());
+		System.out.println(stck.pop());
+		
+		//=== Reverse with Stack ===//
+		
+		Reverser rs1 = new Reverser("trap");
+		System.out.println(rs1.doReverse());
+		
+		Reverser rs3 = new Reverser("");
+		System.out.println(rs3.doReverse());
+		
+		Reverser rs2 = new Reverser("top123");
+		System.out.println(rs2.doReverse());
+		
+		
+		//=== Delimeter Check with Stack ===//
+		
+		DelimeterCheck dc1 = new DelimeterCheck("a{b(c]d}e");
+		dc1.doDelimeterCheck();
+
+		DelimeterCheck dc3 = new DelimeterCheck("a{b(c)");
+		dc3.doDelimeterCheck();
+		
+		DelimeterCheck dc2 = new DelimeterCheck("c[d]");
+		dc2.doDelimeterCheck();
+
+
 
 	}
 

@@ -1,7 +1,3 @@
-/Initial.class
-/LinkedList.class
-/Node.class
-/DoubleList.class
-/QueueList.class
-/SortedList.class
-/StackLink.class
+/DNode.class
+/DoublyLinkedList.class
+/com/
