@@ -1,3 +1,5 @@
+import com.demo.queue.PriorityQ;
+import com.demo.queue.Queue;
 import com.demo.stack.DelimeterCheck;
 import com.demo.stack.Reverser;
 import com.demo.stack.Stack;
@@ -171,7 +173,38 @@ public class Initial {
 		
 		DelimeterCheck dc2 = new DelimeterCheck("c[d]");
 		dc2.doDelimeterCheck();
-
+		
+		//=== Queue ===//
+		
+		Queue q1 = new Queue(4);
+		q1.insert('a');
+		q1.insert('b');
+		q1.insert('c');
+		q1.insert('d');
+		
+		System.out.println(q1.remove());
+		System.out.println(q1.remove());
+		
+		q1.insert('e');
+		q1.insert('f');
+		
+		System.out.println(q1.remove());
+		System.out.println(q1.remove());
+		System.out.println(q1.remove());
+		System.out.println(q1.remove());
+		
+		//== Priority Queue with Array ==//
+		
+		PriorityQ thePQ = new PriorityQ(5);
+		thePQ.insert(30);
+		thePQ.insert(10);
+		thePQ.insert(40);
+		thePQ.insert(20);
+		while( !thePQ.isEmpty() )
+		{
+		long item = thePQ.remove();
+		System.out.println(item);
+		} 
 
 
 	}
