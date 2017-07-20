@@ -1,3 +1,4 @@
+import com.demo.heap.HeapSort;
 import com.demo.queue.PriorityQ;
 import com.demo.queue.Queue;
 import com.demo.stack.DelimeterCheck;
@@ -205,7 +206,35 @@ public class Initial {
 		long item = thePQ.remove();
 		System.out.println(item);
 		} 
-
+		
+		//== Heap Sort ===//
+		
+		HeapSort hsort = new HeapSort(5);
+		hsort.insertAt(100, 0);
+		hsort.incrementItems();
+		hsort.insertAt(90, 1);
+		hsort.incrementItems();
+		hsort.insertAt(80, 2);
+		hsort.incrementItems();
+		hsort.insertAt(70, 3);
+		hsort.incrementItems();
+		hsort.insertAt(60, 4);
+		hsort.incrementItems();
+		
+		hsort.displayHeap();
+		
+		for(int j=((5/2)-1); j>=0;j--){
+			hsort.trickleDown(j);
+		}
+		hsort.displayHeap();
+		
+		for(int k=4;k>=0;k--){
+			int temp = hsort.remove();
+			hsort.insertAt(temp, k);
+		}
+		
+		hsort.displayHeap();
+		
 
 	}
 
