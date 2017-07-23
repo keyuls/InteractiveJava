@@ -4,6 +4,8 @@ import com.demo.queue.Queue;
 import com.demo.stack.DelimeterCheck;
 import com.demo.stack.Reverser;
 import com.demo.stack.Stack;
+import com.demo.tree.Tree;
+import com.demo.tree.TreeNode;
 
 public class Initial {
 
@@ -234,6 +236,43 @@ public class Initial {
 		}
 		
 		hsort.displayHeap();
+		
+		
+		//== Tree ===//
+		
+		Tree tree = new Tree();
+		tree.insert(50);
+		tree.insert(10);
+		tree.insert(60);
+		tree.insert(40);
+		tree.insert(70);
+		tree.insert(80);
+		tree.insert(20);
+		tree.insert(5);
+		tree.insert(55);
+		tree.insert(57);
+		tree.insert(54);
+		tree.insert(65);
+		tree.insert(63);
+		tree.insert(64);
+
+		System.out.println("Tree Display");
+		tree.display();
+		
+		tree.delete(5);
+		System.out.println("Tree Delete 5");
+		tree.display();
+		
+		tree.delete(40);
+		System.out.println("Tree Delete 40");
+		tree.display();
+		
+		tree.delete(60);
+		System.out.println("Tree Delete 60");
+		tree.display();
+		
+		
+		
 		
 
 	}
