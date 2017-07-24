@@ -1,3 +1,4 @@
+import com.demo.graph.Graph;
 import com.demo.heap.HeapSort;
 import com.demo.queue.PriorityQ;
 import com.demo.queue.Queue;
@@ -271,6 +272,19 @@ public class Initial {
 		System.out.println("Tree Delete 60");
 		tree.display();
 		
+		//== Graph ==//
+		Graph theGraph = new Graph(20); 
+		theGraph.insert('A');    // 0  (start for dfs)
+		theGraph.insert('B');    // 1 
+		theGraph.insert('C');    // 2 
+		theGraph.insert('D');    // 3 
+		theGraph.insert('E');    // 4
+		theGraph.addEdge(0, 1);     // AB 
+		theGraph.addEdge(1, 2);     // BC 
+		theGraph.addEdge(0, 3);     // AD 
+		theGraph.addEdge(3, 4);     // DE
+		System.out.println("DFS"); 
+		theGraph.dfs(); 
 		
 		
 		
