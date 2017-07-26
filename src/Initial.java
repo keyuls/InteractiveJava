@@ -285,6 +285,8 @@ public class Initial {
 		theGraph.addEdge(3, 4);     // DE
 		System.out.println("DFS"); 
 		theGraph.dfs(); 
+		System.out.println("BFS"); 
+		theGraph.bfs(); 
 		
 		
 		

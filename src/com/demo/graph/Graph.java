@@ -1,5 +1,7 @@
 package com.demo.graph;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Graph {
@@ -61,5 +63,31 @@ public class Graph {
 	
 	public void displayVertex(int v){
 		System.out.println(vertexList[v].label);
+	}
+	
+	public void reset(){
+		for(int i=0;i<nVertex;i++)
+			vertexList[i].isVisited = false;
+	}
+	
+	public void bfs(){
+		reset();
+		Queue<Integer> queue = new LinkedList<>();
+		int unvisitedIndex;
+		
+		vertexList[0].isVisited = true;
+		queue.add(0);
+		displayVertex(0);
+		
+		while(!queue.isEmpty()){
+			int index = queue.poll();
+
+			while((unvisitedIndex =unVisitedVertex(index))!= -1){
+				vertexList[unvisitedIndex].isVisited = true;
+				queue.add(unvisitedIndex);
+				displayVertex(unvisitedIndex);
+			}
+		}
+		
 	}
 }
