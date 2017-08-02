@@ -1,3 +1,4 @@
+import com.demo.heap.Heap;
 import com.demo.queue.PriorityQ;
 import com.demo.queue.Queue;
 import com.demo.stack.DelimeterCheck;
@@ -206,6 +207,21 @@ public class Initial {
 		System.out.println(item);
 		} 
 
+		
+		//== Heap ==//
+		
+		Heap hp = new Heap(5);
+		hp.insert(101);
+		hp.insert(201);
+		hp.insert(301);
+		hp.insert(401);
+		hp.insert(501);
+		
+		hp.heapDisplay();
+		
+		hp.remove();
+		hp.heapDisplay();
+		
 
 	}
 
