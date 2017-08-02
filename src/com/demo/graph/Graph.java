@@ -31,6 +31,7 @@ public class Graph {
 		adjMatrix[end][start]=1; 
 	}
 	
+	// Depth first search
 	public void dfs(){
 		Stack<Integer> stck = new Stack<Integer>();
 		vertexList[0].isVisited = true;
@@ -70,6 +71,7 @@ public class Graph {
 			vertexList[i].isVisited = false;
 	}
 	
+	// Breath first Search
 	public void bfs(){
 		reset();
 		Queue<Integer> queue = new LinkedList<>();
@@ -89,5 +91,93 @@ public class Graph {
 			}
 		}
 		
+	}
+	
+	//Minimum Spanning Tree
+	public void MST(){
+		reset();
+		System.out.println("--MST--");
+		Stack<Integer> stck = new Stack<Integer>();
+		vertexList[0].isVisited = true;
+		stck.add(0);
+		
+		while(!stck.isEmpty()){
+			int currentVertex = stck.peek();
+			int v = unVisitedVertex(currentVertex);
+			if(v!=-1){
+				vertexList[v].isVisited = true;
+				stck.push(v);
+				displayVertex(currentVertex);
+				displayVertex(v);
+				System.out.println("----");
+			}
+			else{
+				stck.pop();
+			}
+		}
+		
+	}
+	
+	// Topological Sort
+	public void topoSort(){
+		char [] sortedArray = new char[nVertex];
+		
+		while(nVertex>0){
+			int v = noSuccessor();
+			
+			if(v==-1){
+				System.out.println("graph has loop");
+				return;
+			}
+			sortedArray[nVertex-1] = vertexList[v].label;
+			deleteVertex(v);
+		}
+
+		System.out.println("Topological sort");
+		for(int i=0;i<sortedArray.length;i++){
+			System.out.print(sortedArray[i]);
+		}		
+	}
+	
+	public int noSuccessor(){
+		boolean isEdge;
+		
+		for(int i=0;i<nVertex;i++){
+			isEdge = false;
+			for(int j=0;j<nVertex;j++){
+				if(adjMatrix[i][j]>0){
+					isEdge = true;
+					break;
+				}
+			}
+			if(!isEdge){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public void deleteVertex(int delVertex){
+		if(delVertex != nVertex-1){
+			for(int i=delVertex;i<nVertex-1;i++)
+				vertexList[i]= vertexList[i+1];
+			
+			for(int i=delVertex;i<nVertex-1;i++)
+				moveUp(i,nVertex);
+			
+			for(int i=delVertex;i<nVertex-1;i++)
+				moveDown(i,nVertex);
+		}
+		nVertex--;
+	}
+	
+	public void moveUp(int row, int nVertex){		
+		for(int i=0;i<nVertex;i++)
+			adjMatrix[row][i] = adjMatrix[row+1][i];
+	}
+	
+	public void moveDown(int col, int nVertex){
+		for(int j=0;j<nVertex;j++)
+			adjMatrix[j][col]= adjMatrix[j][col+1];
 	}
 }

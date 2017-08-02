@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 import com.demo.heap.Heap;
-=======
 import com.demo.graph.Graph;
 import com.demo.heap.HeapSort;
->>>>>>> 1af5aef295f2041413f13c0c4b6953ed0b3ec2e2
 import com.demo.queue.PriorityQ;
 import com.demo.queue.Queue;
 import com.demo.stack.DelimeterCheck;
@@ -214,6 +211,20 @@ public class Initial {
 		System.out.println(item);
 		} 
 		
+		//== Heap ==//
+		
+				Heap hp = new Heap(5);
+				hp.insert(101);
+				hp.insert(201);
+				hp.insert(301);
+				hp.insert(401);
+				hp.insert(501);
+				
+				hp.heapDisplay();
+				
+				hp.remove();
+				hp.heapDisplay();
+		
 		//== Heap Sort ===//
 		
 		HeapSort hsort = new HeapSort(5);
@@ -261,22 +272,6 @@ public class Initial {
 		tree.insert(63);
 		tree.insert(64);
 
-<<<<<<< HEAD
-		
-		//== Heap ==//
-		
-		Heap hp = new Heap(5);
-		hp.insert(101);
-		hp.insert(201);
-		hp.insert(301);
-		hp.insert(401);
-		hp.insert(501);
-		
-		hp.heapDisplay();
-		
-		hp.remove();
-		hp.heapDisplay();
-=======
 		System.out.println("Tree Display");
 		tree.display();
 		
@@ -303,13 +298,32 @@ public class Initial {
 		theGraph.addEdge(1, 2);     // BC 
 		theGraph.addEdge(0, 3);     // AD 
 		theGraph.addEdge(3, 4);     // DE
+		theGraph.addEdge(1, 4);     // BE
 		System.out.println("DFS"); 
 		theGraph.dfs(); 
 		System.out.println("BFS"); 
 		theGraph.bfs(); 
+		theGraph.MST();
 		
-		
->>>>>>> 1af5aef295f2041413f13c0c4b6953ed0b3ec2e2
+		// Topological sort
+		Graph tgraph = new Graph(20); 
+		tgraph.insert('A');    // 0 
+		tgraph.insert('B');    // 1 
+		tgraph.insert('C');    // 2 
+		tgraph.insert('D');    // 3 
+		tgraph.insert('E');    // 4 
+		tgraph.insert('F');    // 5 
+		tgraph.insert('G');    // 6 
+		tgraph.insert('H');    // 7
+		tgraph.addEdge(0, 3);     // AD 
+		tgraph.addEdge(0, 4);     // AE 
+		tgraph.addEdge(1, 4);     // BE 
+		tgraph.addEdge(2, 5);     // CF 
+		tgraph.addEdge(3, 6);     // DG 
+		tgraph.addEdge(4, 6);     // EG 
+		tgraph.addEdge(5, 7);     // FH 
+		tgraph.addEdge(6, 7);     // GH
+		tgraph.topoSort();
 		
 
 	}
