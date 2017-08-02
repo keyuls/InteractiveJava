@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import com.demo.heap.Heap;
+=======
+import com.demo.graph.Graph;
+import com.demo.heap.HeapSort;
+>>>>>>> 1af5aef295f2041413f13c0c4b6953ed0b3ec2e2
 import com.demo.queue.PriorityQ;
 import com.demo.queue.Queue;
 import com.demo.stack.DelimeterCheck;
 import com.demo.stack.Reverser;
 import com.demo.stack.Stack;
+import com.demo.tree.Tree;
+import com.demo.tree.TreeNode;
 
 public class Initial {
 
@@ -206,7 +213,55 @@ public class Initial {
 		long item = thePQ.remove();
 		System.out.println(item);
 		} 
+		
+		//== Heap Sort ===//
+		
+		HeapSort hsort = new HeapSort(5);
+		hsort.insertAt(100, 0);
+		hsort.incrementItems();
+		hsort.insertAt(90, 1);
+		hsort.incrementItems();
+		hsort.insertAt(80, 2);
+		hsort.incrementItems();
+		hsort.insertAt(70, 3);
+		hsort.incrementItems();
+		hsort.insertAt(60, 4);
+		hsort.incrementItems();
+		
+		hsort.displayHeap();
+		
+		for(int j=((5/2)-1); j>=0;j--){
+			hsort.trickleDown(j);
+		}
+		hsort.displayHeap();
+		
+		for(int k=4;k>=0;k--){
+			int temp = hsort.remove();
+			hsort.insertAt(temp, k);
+		}
+		
+		hsort.displayHeap();
+		
+		
+		//== Tree ===//
+		
+		Tree tree = new Tree();
+		tree.insert(50);
+		tree.insert(10);
+		tree.insert(60);
+		tree.insert(40);
+		tree.insert(70);
+		tree.insert(80);
+		tree.insert(20);
+		tree.insert(5);
+		tree.insert(55);
+		tree.insert(57);
+		tree.insert(54);
+		tree.insert(65);
+		tree.insert(63);
+		tree.insert(64);
 
+<<<<<<< HEAD
 		
 		//== Heap ==//
 		
@@ -221,6 +276,40 @@ public class Initial {
 		
 		hp.remove();
 		hp.heapDisplay();
+=======
+		System.out.println("Tree Display");
+		tree.display();
+		
+		tree.delete(5);
+		System.out.println("Tree Delete 5");
+		tree.display();
+		
+		tree.delete(40);
+		System.out.println("Tree Delete 40");
+		tree.display();
+		
+		tree.delete(60);
+		System.out.println("Tree Delete 60");
+		tree.display();
+		
+		//== Graph ==//
+		Graph theGraph = new Graph(20); 
+		theGraph.insert('A');    // 0  (start for dfs)
+		theGraph.insert('B');    // 1 
+		theGraph.insert('C');    // 2 
+		theGraph.insert('D');    // 3 
+		theGraph.insert('E');    // 4
+		theGraph.addEdge(0, 1);     // AB 
+		theGraph.addEdge(1, 2);     // BC 
+		theGraph.addEdge(0, 3);     // AD 
+		theGraph.addEdge(3, 4);     // DE
+		System.out.println("DFS"); 
+		theGraph.dfs(); 
+		System.out.println("BFS"); 
+		theGraph.bfs(); 
+		
+		
+>>>>>>> 1af5aef295f2041413f13c0c4b6953ed0b3ec2e2
 		
 
 	}
