@@ -1,3 +1,4 @@
+import com.demo.heap.Heap;
 import com.demo.graph.Graph;
 import com.demo.heap.HeapSort;
 import com.demo.queue.PriorityQ;
@@ -210,7 +211,7 @@ public class Initial {
 		System.out.println(item);
 		} 
 		
-		//== Heap ==//
+			//== Heap ==//
 		
 				Heap hp = new Heap(5);
 				hp.insert(101);
